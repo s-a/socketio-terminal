@@ -1,0 +1,33 @@
+[
+  {
+    "parms" : ["<project-name>", "<environment>"],
+    "description" : "compile and deploy a project to the given environment."
+  },
+  {
+    "parms" : ["<set>", "key", "[value]"],
+    "description" : "setup a value for your local machine configuration."
+  },
+  {
+    "prefix" : "  ",
+    "parms" : ["set", "username", "<your-username>"],
+    "description" : "setup a username for your local machine configuration."
+  },
+  {
+    "prefix" : "  ",
+    "parms" : ["set", "passphrase"],
+    "description" : "Prompts you to enter a passphrase for deployment."
+  },
+  {
+    "prefix" : "  ",
+    "parms" : ["set", "privatekey", "<privatekey-file>"],
+    "description" : "Full path to you privatekey file for deployment."
+  },
+  {
+    "parms" : ["init", "[--force]"],
+    "description" : "write a deployment configuration file to current directory."
+  },
+  {
+    "parms" : ["list"],
+    "description" : "list projects and environments in config file of current directory."
+  }
+]
