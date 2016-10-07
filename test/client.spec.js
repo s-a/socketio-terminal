@@ -68,7 +68,7 @@ describe("#client", function () {
         c.socket.disconnect();
         server.close(); 
         done(); 
-    };
+    }; 
 
     c.connect(function (){
       c.executeOnServer({
