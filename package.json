@@ -47,6 +47,9 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
+    "debug-server": "iron-node lib/client/index.js server",
+    "server": "node lib/index.js server --keyfolder ./test/",
+    "client": "node lib/index.js client --privatekey ./test/deployager_rsa --publickey ./test/deployager_rsa.pem --passphrase deployager --username deployager --host localhost --port 8080",
     "debug-client": "iron-node lib/client/index.js client"
   },
   "license": "MIT",

@@ -4,7 +4,8 @@ process.env.NODE_ENV = "test";
   var Server = require("./../lib/server/index.js");
   var Cli = new require("n-cli");
   var cliServer = new Cli({ 
-    handleUncaughtException : false
+    handleUncaughtException : false,
+    argv : ["--keyfolder", __dirname]
   });
   var server = new Server(cliServer);
   server.run();
@@ -36,11 +37,11 @@ var testClient = function(argvArray){
  
 
 describe("#client", function () {
-   it("should throw exception when using wrong username", function () { 
+   it("should throw exception private-key-encrypt-error when using wrong username", function () { 
     should(function(){
       testClient(["client", 
-      "--privatekey", path.join(__dirname, "key_rsa"), 
-      "--publickey", path.join(__dirname, "key_rsa.pem"), 
+      "--privatekey", path.join(__dirname, "deployager_rsa"), 
+      "--publickey", path.join(__dirname, "deployager_rsa.pem"), 
       "--passphrase", "deployaga", 
       "--username", "deployager",  
       "--host", "localhost", 
@@ -48,34 +49,39 @@ describe("#client", function () {
     }).throw("private-key-encrypt-error");
   });
 
-  it("should throw invalid-parms", function () { 
+  it("should throw missing-parameter", function () { 
     should(function(){
       testClient(["client"]).connect();
-    }).throw("private-key-encrypt-error");
+    }).throw("missing-parameter");
   });
 
   it("should connect fine and execute command", function (done) {  
     var c = testClient([
       "client", 
-      "--privatekey", path.join(__dirname, "key_rsa"), 
-      "--publickey", path.join(__dirname, "key_rsa.pem"), 
+      "--privatekey", path.join(__dirname, "deployager_rsa"), 
+      "--publickey", path.join(__dirname, "deployager_rsa.pem"), 
       "--passphrase", "deployager", 
       "--username", "deployager",  
       "--host", "localhost", 
       "--port", "8080"]
     );
     var remotecommandDone = function(data){
+      try{
         c.socket.disconnect();
+      } catch(e) {}
         server.close(); 
         done(); 
     }; 
 
-    c.connect(function (){
-      c.executeOnServer({
-        command : "do something",
-        event : "server-did-something"
-      }, remotecommandDone);
-    });  
+    var handlers = {
+      connect : function (){
+        c.executeOnServer({
+          command : "do something",
+          event : "server-did-something"
+        }, remotecommandDone);
+      }
+    };
+    c.connect(handlers);  
   });
   
 });
