@@ -1,6 +1,6 @@
 {
   "name": "socketio-terminal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A client server solution which acts like SSH but communicates via socket.io.",
   "homepage": "https://github.com/s-a/sockeio-terminal",
   "author": {
