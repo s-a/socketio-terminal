@@ -53,7 +53,8 @@
     "debug-server": "iron-node lib/client/index.js server",
     "server": "node lib/index.js server --keyfolder ./test/",
     "client": "node lib/index.js client --privatekey ./test/deployager_rsa --publickey ./test/deployager_rsa.pem --passphrase deployager --username deployager --host localhost --port 8080",
-    "debug-client": "iron-node lib/client/index.js client"
+    "debug-client": "iron-node lib/client/index.js client",
+    "bump": "node node_modules/mocha/bin/_mocha && npm version patch && git push && git push --tags && npm publish"
   },
   "license": "MIT",
   "dependencies": {
