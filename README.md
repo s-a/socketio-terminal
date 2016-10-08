@@ -1,5 +1,5 @@
 # socketio-terminal [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> A client server solution which acts like SSH but communicates via socket.io.
+> A client server module which acts like SSH but communicates via socket.io.
 
 ## Installation
 
@@ -10,12 +10,16 @@ $ npm install [-g|--save] socketio-terminal
 ## Usage
 ### Shell
 ```sh
-$ socketio-terminal client [--keyfolder ./test/];
+$ socketio-terminal client [--keyfolder ./test/] [--port 8080];
 $ socketio-terminal server --privatekey ./test/deployager_rsa --publickey ./test/deployager_rsa.pem --passphrase deployager --username deployager --host localhost --port 8080;
 ```
 ### Programmatically
+API was born while TDD. If you need more public APIs please send a PR.
  - [Client API](/API/CLIENT.md) 
  - [Server API](/API/SERVER.md) 
+
+## Limitations
+Server cannot handle shell commands that require user stdinput while execution. If anyone knows a solution for this limitation then please add an issue at this repo!
 
 ## License
 
