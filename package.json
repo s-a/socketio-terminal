@@ -1,6 +1,6 @@
 {
   "name": "socketio-terminal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A client server solution which acts like SSH but communicates via socket.io.",
   "homepage": "https://github.com/s-a/sockeio-terminal",
   "author": {
@@ -47,8 +47,8 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
-    "docs:server": "jsdox lib/server/index.js && cp ./output/index.md ./API/SERVER.md", 
-    "docs:client": "jsdox lib/client/index.js && cp ./output/index.md ./API/CLIENT.md", 
+    "docs:server": "jsdox lib/server/index.js && cp ./output/index.md ./API/SERVER.md",
+    "docs:client": "jsdox lib/client/index.js && cp ./output/index.md ./API/CLIENT.md",
     "docs": "npm run docs:server && npm run docs:client",
     "debug-server": "iron-node lib/client/index.js server",
     "server": "node lib/index.js server --keyfolder ./test/",
