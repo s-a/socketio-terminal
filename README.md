@@ -15,8 +15,11 @@ $ socketio-terminal client --privatekey ./test/deployager_rsa --publickey ./test
 ```
 ### Programmatically
 API was born while TDD. If you need more public APIs please send a PR.
- - [Client API](/API/CLIENT.md) 
- - [Server API](/API/SERVER.md) 
+ - [Client API](/API/CLIENT.md)
+ - [Server API](/API/SERVER.md)
+
+## Demo
+ [![Demo][demo-image]][npm-url]
 
 ## Limitations
 Server cannot handle shell commands that require user stdinput while execution. If anyone knows a solution for this limitation then please add an issue at this repo!
@@ -34,3 +37,4 @@ MIT © [s-a](https://github.com/s-a)
 [daviddm-url]: https://david-dm.org/s-a/socketio-terminal
 [coveralls-image]: https://coveralls.io/repos/s-a/socketio-terminal/badge.svg
 [coveralls-url]: https://coveralls.io/r/s-a/socketio-terminal
+[demo-image]: demo.gif
