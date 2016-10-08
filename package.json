@@ -2,7 +2,7 @@
   "name": "socketio-terminal",
   "version": "1.0.3",
   "description": "A client server solution which acts like SSH but communicates via socket.io.",
-  "homepage": "https://github.com/s-a/sockeio-terminal",
+  "homepage": "https://github.com/s-a/socketio-terminal",
   "author": {
     "name": "s-a",
     "email": "stephan.ahlf@googlemail.com",
@@ -43,7 +43,7 @@
       "mocha": true
     }
   },
-  "repository": "https://github.com/s-a/sockeio-terminal.git",
+  "repository": "https://github.com/s-a/socketio-terminal.git",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
