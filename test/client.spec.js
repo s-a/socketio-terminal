@@ -65,7 +65,7 @@ describe("#client", function () {
       "--host", "localhost", 
       "--port", "8080"]
     );
-    var remotecommandDone = function(data){
+    var remotecommandDone = function(/*data*/){
       try{
         c.socket.disconnect();
       } catch(e) {}
